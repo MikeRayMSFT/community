@@ -62,7 +62,7 @@ X.Y.Z-beta.W, with an additional +bbbb build suffix added. Furthermore, builds
 that are built off of a dirty build tree, (during development, with things in
 the tree that are not checked it,) it will be appended with -dirty.
 
-### Supported releases and component skew
+### Supported releases and component SKU
 
 We expect users to stay reasonably up-to-date with the versions of Kubernetes
 they use in production, but understand that it may take time to upgrade,
@@ -73,10 +73,9 @@ minor release; we often include critical bug fixes in
 [patch releases](#patch-releases), and so encourage users to upgrade as soon as
 possible.
 
-Different components are expected to be compatible across different amounts of
-skew, all relative to the master version.  Nodes may lag masters components by
+Different components are expected to be compatible across different SKUs, all relative to the master version.  Nodes may lag masters components by
 up to two minor versions but should be at a version no newer than the master; a
-client should be skewed no more than one minor version from the master, but may
+client should be no more than one minor version from the master, but may
 lead the master by up to one minor version.  For example, a v1.3 master should
 work with v1.1, v1.2, and v1.3 nodes, and should work with v1.2, v1.3, and v1.4
 clients.
@@ -111,7 +110,7 @@ version changes, not new major nor minor versions).
 rolling upgrade across their cluster. (Rolling upgrade means being able to
 upgrade the master first, then one node at a time. See [#4855](https://issues.k8s.io/4855) for details.)
   * However, we do not recommend upgrading more than two minor releases at a
-time (see [Supported releases and component skew](#Supported-releases-and-component-skew)), and do not recommend
+time (see [Supported releases and component SKU](#Supported-releases-and-component-skew)), and do not recommend
 running non-latest patch releases of a given minor release.
 * No hard breaking changes over version boundaries.
   * For example, if a user is at Kube 1.x, we may require them to upgrade to
